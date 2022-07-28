@@ -12,6 +12,7 @@ import com.boot.spring.user.domain.LoginDatabase
  *      1.1 회원가입 구현 ( insert 처리 완료 )
  *      1.2 로그인 구현(완료)
  *      1.3 crud 적용
+ *       1.3.1 read(select) - 유저 recyclerview 구현
  *
  *  2. viewmodel 사용
  *  3. retrofit2 추가 repository 구현

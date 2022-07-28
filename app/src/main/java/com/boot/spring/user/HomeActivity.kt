@@ -3,7 +3,6 @@ package com.boot.spring.user
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import com.boot.spring.user.databinding.ActivityHomeBinding
 import com.boot.spring.user.domain.LoginDatabase
 import kotlinx.coroutines.CoroutineScope
@@ -31,17 +30,8 @@ class HomeActivity : Activity() {
         }
 
         binding.buttonUsers.setOnClickListener {
-            CoroutineScope(IO).launch {
-                val users = db.userDao()!!.findAll()
-
-                for (user in users) {
-                    Log.d("select users results", "id: ${user.id}\n " +
-                            "userId: ${user.userId}\n" +
-                            "password: ${user.password}\n" +
-                            "name: ${user.name}\n" +
-                            "address: ${user.address}" )
-                }
-            }
+           val intent = Intent(applicationContext, ListActivity::class.java)
+           startActivity(intent)
         }
 
         binding.buttonEdit.setOnClickListener {
