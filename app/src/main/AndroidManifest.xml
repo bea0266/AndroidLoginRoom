@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".HomeActivity" android:exported="true"/>
         <activity android:name=".ListActivity" android:exported="true"/>
+        <activity android:name=".ProfileActivity" android:exported="true"/>
+        <activity android:name=".EditActivity" android:exported="true" />
     </application>
 
 </manifest>

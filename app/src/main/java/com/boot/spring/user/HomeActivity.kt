@@ -3,6 +3,7 @@ package com.boot.spring.user
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
+import com.boot.spring.user.LoginFragment.Companion.login
 import com.boot.spring.user.databinding.ActivityHomeBinding
 import com.boot.spring.user.domain.LoginDatabase
 import kotlinx.coroutines.CoroutineScope
@@ -24,6 +25,10 @@ class HomeActivity : Activity() {
 
         binding.tvWelcome.text = "${requires.getStringExtra("userId")}님 환영합니다."
 
+        binding.buttonProfile.setOnClickListener {
+            val intent = Intent(applicationContext, ProfileActivity::class.java )
+            startActivity(intent)
+        }
 
         binding.buttonLogout.setOnClickListener {
             finish()
@@ -35,7 +40,9 @@ class HomeActivity : Activity() {
         }
 
         binding.buttonEdit.setOnClickListener {
-            finish()
+            val intent = Intent(applicationContext, EditActivity::class.java)
+            intent.putExtra("id", login.id)
+            startActivity(intent)
         }
 
         binding.buttonDelete.setOnClickListener {

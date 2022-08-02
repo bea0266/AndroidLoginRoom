@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.boot.spring.user.databinding.FragmentLoginBinding
 import com.boot.spring.user.domain.LoginDatabase
+import com.boot.spring.user.domain.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
@@ -35,6 +36,7 @@ class LoginFragment : Fragment() {
                if(result.password.equals(password)) {
                    val intent = Intent(activity, HomeActivity::class.java)
                    intent.putExtra("userId", result.userId)
+                   login = result
                    startActivity(intent)
                    Log.d("login result", "success" )
                } else {
@@ -44,5 +46,9 @@ class LoginFragment : Fragment() {
         }
 
         return view
+    }
+
+    companion object {
+        lateinit var login : User
     }
 }

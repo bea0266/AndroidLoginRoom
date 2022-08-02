@@ -33,7 +33,7 @@ class JoinFragment : Fragment() {
             val name = binding.etName.text.toString()
             val address = binding.etAddress.text.toString()
 
-            val user = User(userId, password, name, address)
+            val user = User(null, userId, password, name, address)
 
             CoroutineScope(IO).launch {
                 db!!.userDao().addUser(user)

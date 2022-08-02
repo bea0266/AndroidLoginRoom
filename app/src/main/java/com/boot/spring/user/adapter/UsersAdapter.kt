@@ -17,14 +17,11 @@ class UsersAdapter (private var list: List<User>) : RecyclerView.Adapter<UsersAd
         val tvAddress = view.findViewById<TextView>(R.id.tvAddress)
 
         fun bind(position: Int) {
-
-                tvId.text = list.get(position).id.toString()
-                tvUserId.text = list.get(position).userId
-                tvPassword.text = list.get(position).password
-                tvName.text = list.get(position).name
-                tvAddress.text = list.get(position).address
-
-
+            tvId.text = list.get(position).id.toString()
+            tvUserId.text = list.get(position).userId
+            tvPassword.text = list.get(position).password
+            tvName.text = list.get(position).name
+            tvAddress.text = list.get(position).address
         }
     }
 
